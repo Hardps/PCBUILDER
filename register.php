@@ -1,3 +1,32 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(isset($_POST["submit"])){
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $confirmpassword = $_POST["confirmpassword"];
+  $duplicate = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+  if(mysqli_num_rows($duplicate) > 0){
+    echo
+    "<script> alert('This email has already been taken'); </script>";
+  }
+  else{
+    if($password == $confirmpassword){
+      $query = "INSERT INTO users VALUES('','$name','$email','$password')";
+      mysqli_query($conn, $query);
+      echo
+      "<script> alert('Registration Successful'); </script>";
+    }
+    else{
+      echo
+      "<script> alert('Password Does Not Match'); </script>";
+    }
+  }
+}
+?>
 <!DOCTYPE html>
 <head>
     <title>Register</title>
@@ -140,22 +169,22 @@
         <div >
             <div class="input-box">
                 <label class="input-label" style="color:white">nAme</label>
-                <input type="text" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                <input type="text" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "name" required value=""/>
             </div>
               <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">eMAil</label>
-                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "email" required value=""/>
             </div>
             <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">pAssword</label>
-                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
             </div>
             <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">confirM pAssword</label>
-                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
+                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "confirmpassword" required value=""/>
             </div>
           <br>
           <div style="text-align: center;">
