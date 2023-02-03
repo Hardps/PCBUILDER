@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Home</title>
+    <title>Register</title>
     <link rel="icon" type="image/jpg" href="imgs/www.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
