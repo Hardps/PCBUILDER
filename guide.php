@@ -43,11 +43,11 @@
         <header>
             <nav>
                 <div class="topnav">
-                    <a href="index.html"><p><b>HoMe</b></p></a>
-                    <a href="pcbuilder.html"><p><b>pcbuiLdeR</b></p></a>
-                    <a class="active" href="guide.html"><p><b>Guide</b></p></a>
-                    <a href="about.html"><p><b>AbouT</b></p></a>
-                    <a href="login.html" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
+                    <a href="index.php"><p><b>HoMe</b></p></a>
+                    <a href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
+                    <a class="active" href="guide.php"><p><b>Guide</b></p></a>
+                    <a href="about.php"><p><b>AbouT</b></p></a>
+                    <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
                 </div>
             </nav>
             </header>
