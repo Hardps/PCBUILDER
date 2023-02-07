@@ -38,10 +38,14 @@
   color: black;
 }
 
-
+.bgpage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 </style>
 </head>
-    <body  style="margin: 0% ; background-image:url('imgs/pcback.jpg')" class="curve">
+    <body  style="margin: 0% ; background-image:url('imgs/pcback.jpg') " class="bgpage">
         <header>
             <nav>
                 <div class="topnav">
