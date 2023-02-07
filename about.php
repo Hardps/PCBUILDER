@@ -46,6 +46,7 @@
                     <a href="index.php"><p><b>HoMe</b></p></a>
                     <a href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
                     <a href="guide.php"><p><b>Guide</b></p></a>
+                    <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                     <a class="active" href="about.php"><p><b>AbouT</b></p></a>
                     <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
                 </div>

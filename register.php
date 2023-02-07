@@ -1,32 +1,3 @@
-<?php
-require 'config.php';
-if(!empty($_SESSION["id"])){
-  header("Location: index.php");
-}
-if(isset($_POST["submit"])){
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  $confirmpassword = $_POST["confirmpassword"];
-  $duplicate = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
-  if(mysqli_num_rows($duplicate) > 0){
-    echo
-    "<script> alert('This email has already been taken'); </script>";
-  }
-  else{
-    if($password == $confirmpassword){
-      $query = "INSERT INTO users VALUES('','$name','$email','$password')";
-      mysqli_query($conn, $query);
-      echo
-      "<script> alert('Registration Successful'); </script>";
-    }
-    else{
-      echo
-      "<script> alert('Password Does Not Match'); </script>";
-    }
-  }
-}
-?>
 <!DOCTYPE html>
 <head>
     <title>Register</title>
@@ -35,6 +6,9 @@ if(isset($_POST["submit"])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <meta name="google-signin-client_id" content="980206925436-po12jj5gai9htsvpheakbblm989i1po5.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
 <style>
 .topnav {
   overflow: hidden;
@@ -129,6 +103,7 @@ if(isset($_POST["submit"])){
                 <a class="active" href="index.php"><p><b>HoMe</b></p></a>
                 <a href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
                 <a href="guide.php"><p><b>Guide</b></p></a>
+                <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                 <a href="about.php"><p><b>AbouT</b></p></a>
                 <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
             </div>
@@ -164,32 +139,32 @@ if(isset($_POST["submit"])){
             </script>
 
             <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-        <form class="contact-form">
+        <form class="contact-form" action="connect.php" method="">
         <br>
         <div >
             <div class="input-box">
                 <label class="input-label" style="color:white">nAme</label>
-                <input type="text" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "name" required value=""/>
+                <input type="text" name="name" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "name" required value=""/>
             </div>
               <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">eMAil</label>
-                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "email" required value=""/>
+                <input type="text" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "email" required value=""/>
             </div>
             <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">pAssword</label>
-                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
+                <input type="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
             </div>
             <br>
-            <div class="input-box">
+            <!-- <div class="input-box">
                 <label class="input-label" style="color:white">confirM pAssword</label>
                 <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "confirmpassword" required value=""/>
-            </div>
+            </div> -->
           <br>
           <div style="text-align: center;">
       
-            <button class="button" type="submit" style="vertical-align:middle; font-family: 'Major Mono Display', monospace, cursive;font-size: 1rem; line-height: 1.6rem; text-align:center; background-color: #76B900; border-radius: 0.3rem; padding:0.7rem "><b>ReGisTer...</b></button>
+            <button class="button" type="submit" value="Register" name="Register" style="vertical-align:middle; font-family: 'Major Mono Display', monospace, cursive;font-size: 1rem; line-height: 1.6rem; text-align:center; background-color: #76B900; border-radius: 0.3rem; padding:0.7rem "><b>ReGisTer...</b></button>
           <!--<button type="submit">Submit</button>-->
           <br>
           <br>
@@ -201,5 +176,9 @@ if(isset($_POST["submit"])){
         </a>
       </div>
     </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

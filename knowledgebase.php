@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>PCBuilder</title>
+    <title>Home</title>
     <link rel="icon" type="image/jpg" href="imgs/www.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,9 +44,9 @@
             <nav>
                 <div class="topnav">
                     <a href="index.php"><p><b>HoMe</b></p></a>
-                    <a class="active"href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
+                    <a href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
                     <a href="guide.php"><p><b>Guide</b></p></a>
-                    <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
+                    <a class="active" href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                     <a href="about.php"><p><b>AbouT</b></p></a>
                     <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
                 </div>
