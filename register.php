@@ -1,3 +1,33 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(isset($_POST["submit"])){
+  $names = $_POST["names"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $confirmpassword = $_POST["confirmpassword"];
+  $duplicate = mysqli_query($conn, "SELECT * FROM users WHERE names = '$names'");
+  if(mysqli_num_rows($duplicate) > 0){
+    echo
+    "<script> alert('Username or Email Has Already Taken'); </script>";
+  }
+  else{
+    if($password == $confirmpassword){
+      $query = "INSERT INTO users VALUES('','$names','$email','$password')";
+      mysqli_query($conn, $query);
+      echo
+      "<script> alert('Registration Successful'); </script>";
+    }
+    else{
+      echo
+      "<script> alert('Password Does Not Match'); </script>";
+    }
+  }
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <title>Register</title>
@@ -6,8 +36,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <meta name="google-signin-client_id" content="980206925436-po12jj5gai9htsvpheakbblm989i1po5.apps.googleusercontent.com">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 
 <style>
 .topnav {
@@ -46,7 +74,6 @@
 }
 .bg { 
   text-align:center;
-  float: center;
   background-color: black; 
   font-family: 'Major Mono Display', monospace; 
   border-radius: 0.3rem;
@@ -121,7 +148,7 @@
         <span class="backtext"><b>ReGisTer</b></span>
         <br>
         <br>
-        <div id="my-signin2" style="float:center;"></div>
+        <div id="my-signin2"></div>
             <script>
               function onSuccess(googleUser) {
                 console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -143,24 +170,28 @@
             </script>
 
             <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-        <form class="contact-form" action="connect.php" method="">
+        <form class="contact-form" method="post" autocomplete="off">
         <br>
         <div >
             <div class="input-box">
                 <label class="input-label" style="color:white">nAme</label>
-                <input type="text" name="name" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "name" required value=""/>
+                <input type="text" id="names" name="names" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "name" required value=""/>
             </div>
               <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">eMAil</label>
-                <input type="text" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "email" required value=""/>
+                <input type="text" id="email" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "email" required value=""/>
             </div>
             <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">pAssword</label>
-                <input type="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
+                <input type="password" id="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
             </div>
             <br>
+            <div class="input-box">
+                <label class="input-label" style="color:white">confiRM pAssword</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
+            </div>
             <!-- <div class="input-box">
                 <label class="input-label" style="color:white">confirM pAssword</label>
                 <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "confirmpassword" required value=""/>
@@ -168,7 +199,7 @@
           <br>
           <div style="text-align: center;">
       
-            <button class="button" type="submit" value="Register" name="Register" style="vertical-align:middle; font-family: 'Major Mono Display', monospace, cursive;font-size: 1rem; line-height: 1.6rem; text-align:center; background-color: #76B900; border-radius: 0.3rem; padding:0.7rem "><b>ReGisTer...</b></button>
+            <button class="button" type="submit" value="submit" name="submit" style="vertical-align:middle; font-family: 'Major Mono Display', monospace, cursive;font-size: 1rem; line-height: 1.6rem; text-align:center; background-color: #76B900; border-radius: 0.3rem; padding:0.7rem "><b>ReGisTer...</b></button>
           <!--<button type="submit">Submit</button>-->
           <br>
           <br>
@@ -176,13 +207,10 @@
         </div>
         </form>
         <a style="color:white">AlReady HAve An Account ?<br>
-        <a style="color:white" href="login.php">Login Here!</a>
+        <a style="color:white; text-decoration: none" href="login.php">Login Here!</a>
         </a>
       </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>

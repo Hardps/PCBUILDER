@@ -36,7 +36,6 @@
 }
 
 .bgpage {
-  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
