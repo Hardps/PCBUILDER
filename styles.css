@@ -1,0 +1,150 @@
+.topnav {
+  overflow: hidden;
+  background-color: #000000;
+  border-radius: 0.3rem;
+  width: 100%;
+	align-items: center;
+}
+
+.topnav a.alignright{
+    float: right;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.topnav a:hover {
+  background-color: #76B900;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #76B900;
+  color: black;
+}
+
+.dropdown {
+  position: right;
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #76B900;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: black;
+  color: white;
+}
+
+.dropdown-content a.active {
+  background-color: #76B900;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover {
+  background-color: #76B900;
+}
+
+.backtext {
+  text-align:center; 
+  background-color: #76B900; 
+  font-family: 'Major Mono Display', monospace; 
+  font-size: 3.5rem; 
+  border-radius: 0.3rem;
+  line-height: 1.6rem;
+  padding:2rem
+}
+
+.bg { 
+  text-align:center;
+  background-color: black; 
+  font-family: 'Major Mono Display', monospace; 
+  border-radius: 0.3rem;
+  padding:1.7rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.form__input {
+  border: 2px solid #e1e5ee;
+  border-radius: 0.2rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+  background-color: #000000;
+  border-radius: 0.5rem;
+  /* Change border when input focus*/
+}
+
+.form__input:hover {
+  transition:0.3s;
+  border-color: #e70f0f;
+}
+
+.form__input:focus {
+  transition:0.3s;
+  border-color: #ff2018;
+}
+
+.form__label {
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  font-size:0.6rem;
+  padding: 0 0.5rem;
+  color: white;
+  cursor: text;
+  border-radius: 0.5rem;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #000000;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+  
+  font-size: 0.8rem;
+}
+
+.bgpage {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.button {
+  vertical-align:middle;
+  font-family: 'Major Mono Display', monospace, cursive;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  text-align:center;
+  background-color: #76B900;
+  border-radius: 0.3rem;
+  padding:0.7rem;
+}

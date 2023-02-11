@@ -31,6 +31,7 @@ if(isset($_POST["submit"])){
 <!DOCTYPE html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/jpg" href="imgs/www.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,103 +39,6 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-signin-client_id" content="980206925436-po12jj5gai9htsvpheakbblm989i1po5.apps.googleusercontent.com">
 <style>
-.topnav {
-  overflow: hidden;
-  background-color: #000000;
-  border-radius: 0.3rem;
-  width: 100%;
-}
-.topnav a.alignright{
-    float: right;
-}
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: 'Major Mono Display', monospace;
-}
-.topnav a:hover {
-  background-color: #76B900;
-  color: black;
-}
-.topnav a.active {
-  background-color: #76B900;
-  color: black;
-}
-.backtext {
-  text-align:center; 
-  background-color: #76B900; 
-  font-family: 'Major Mono Display', monospace; 
-  font-size: 3.5rem; 
-  border-radius: 0.3rem;
-  line-height: 1.6rem;
-  padding:2rem
-}
-.bg { 
-  text-align:center;
-  background-color: black; 
-  font-family: 'Major Mono Display', monospace; 
-  border-radius: 0.3rem;
-  padding:1.7rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-.float-parent-element { 
-  /*width: 50%;*/
-  text-align: center;
-} 
-.float-child-element { 
-  display: inline-block;
-  padding: 1rem 1rem;
-  vertical-align: middle;
-} 
-.form__input {
-  border: 2px solid #e1e5ee;
-  border-radius: 0.2rem;
-  font-family: inherit;
-  font-size: inherit;
-  color: white;
-  outline: none;
-  padding: 1.25rem;
-  background: none;
-  background-color: #000000;
-  border-radius: 0.5rem;
-  /* Change border when input focus*/
-}
-.form__input:hover {
-  transition:0.3s;
-  border-color: #e70f0f;
-}
-.form__input:focus {
-  transition:0.3s;
-  border-color: #ff2018;
-}
-.form__label {
-  position: absolute;
-  font-family: 'Press Start 2P', cursive;
-  font-size:0.6rem;
-  padding: 0 0.5rem;
-  color: white;
-  cursor: text;
-  border-radius: 0.5rem;
-  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-  background-color: #000000;
-}
-.form__input:focus ~ .form__label,
-.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
-  
-  font-size: 0.8rem;
-}
-.bgpage {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 </style>
 </head>
     <body  style="margin: 0% ; background-image:url('imgs/pcback.jpg') " class="bgpage">
@@ -146,23 +50,37 @@ if(isset($_POST["submit"])){
                 <a href="guide.php"><p><b>Guide</b></p></a>
                 <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                 <a href="about.php"><p><b>AbouT</b></p></a>
-                <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
+                <div class="dropdown" style="float:right">
+                    <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
+                    <?php echo "WelcoMe ", $row["names"];?></b></p></a>
+                    <div class="dropdown-content">
+                      <a href="profile.php"><b>pRofile</b></a>
+                      <a href="logout.php"><b>loGout</b></a>
+                    </div>
+                  </div>
+
+                  <?php } else{ ?>
+                  <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a><?php } ?>
             </div>
         </nav>
     </header>
-    <div style="text-align:center;line-height: 1.6rem;padding-top:2rem;border-radius: 0.3rem;">
+
+    <!-- <div style="text-align:center;line-height: 1.6rem;padding-top:2rem;border-radius: 0.3rem;"> -->
         <div class="bg">
         <br>
         <br>
-        <span class="backtext"><b>Login</b></span>
+        <div><a class="backtext"><b>Login</b></a></div>
         <br>
         <br>
-        <div class="float-parent-element">
-        <div class="float-child-element">
-        <a><img src="imgs/GIF.gif" alt ="memo" style="width:12rem;height:12rem;"></a>
+        <div class="grid-container">
+        <div class="grid-item">
+        <a><img src="imgs/GIF.gif" alt ="memo" style="width:12rem;height:12rem; "></a>
         </div>
-        <div class="float-child-element">
-          <div id="my-signin2" style="margin: 0 auto"></div>
+        <div class="grid-item">
+        <form class="contact-form" method="post" autocomplete="off">
+            <br>
+            <div>
+            <div id="my-signin2" style="margin: 0 auto; "></div>
             <script>
               function onSuccess(googleUser) {
                 console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -184,7 +102,6 @@ if(isset($_POST["submit"])){
             </script>
 
             <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-        <form class="contact-form" method="post" autocomplete="off">
             <br>
           <div>
             <div class="input-box">
@@ -199,7 +116,7 @@ if(isset($_POST["submit"])){
           <br>
           <div style="text-align: center;">
       
-            <button class="button" type="submit" id="submit" name="submit" style="vertical-align:middle; font-family: 'Major Mono Display', monospace, cursive;font-size: 1rem; line-height: 1.6rem; text-align:center; background-color: #76B900; border-radius: 0.3rem; padding:0.7rem "><b>Login...</b></button>
+            <button class="button" type="submit" id="submit" name="submit"><b>Login...</b></button>
           <!--<button type="submit">Submit</button>-->
           <br>
           <br>
@@ -207,9 +124,8 @@ if(isset($_POST["submit"])){
         </div>
         </form>
         <a style="color:white">don't HAve An Account yet ?<br>
-        <a style="color:white; text-decoration: none" href="register.php ">ReGisTer Here!</a>
+        <a style="text-decoration: none; color: #76B900" href="register.php ">ReGisTer Here!</a>
         </a>
-      </div>
       </div>
     </div>
   </div>

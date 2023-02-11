@@ -31,101 +31,13 @@ if(isset($_POST["submit"])){
 <!DOCTYPE html>
 <head>
     <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/jpg" href="imgs/www.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
     <meta name="google-signin-client_id" content="980206925436-po12jj5gai9htsvpheakbblm989i1po5.apps.googleusercontent.com">
 
-<style>
-.topnav {
-  overflow: hidden;
-  background-color: #000000;
-  border-radius: 0.3rem;
-}
-.topnav a.alignright{
-    float: right;
-}
-.topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: 'Major Mono Display', monospace;
-}
-.topnav a:hover {
-  background-color: #76B900;
-  color: black;
-}
-.topnav a.active {
-  background-color: #76B900;
-  color: black;
-}
-.backtext {
-  text-align:center; 
-  background-color: #76B900; 
-  font-family: 'Major Mono Display', monospace; 
-  font-size: 50px; 
-  border-radius: 0.3rem;
-  line-height: 1.6rem;
-  padding:2rem
-}
-.bg { 
-  text-align:center;
-  background-color: black; 
-  font-family: 'Major Mono Display', monospace; 
-  border-radius: 0.3rem;
-  padding:1.7rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-.form__input {
-  border: 2px solid #e1e5ee;
-  border-radius: 0.2rem;
-  font-family: inherit;
-  font-size: inherit;
-  color: white;
-  outline: none;
-  padding: 1.25rem;
-  background: none;
-  background-color: #000000;
-  border-radius: 0.5rem;
-  /* Change border when input focus*/
-}
-.form__input:hover {
-  transition:0.3s;
-  border-color: #e70f0f;
-}
-.form__input:focus {
-  transition:0.3s;
-  border-color: #ff2018;
-}
-.form__label {
-  position: absolute;
-  font-family: 'Press Start 2P', cursive;
-  font-size:0.6rem;
-  padding: 0 0.5rem;
-  color: white;
-  cursor: text;
-  border-radius: 0.5rem;
-  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-  background-color: #000000;
-}
-.form__input:focus ~ .form__label,
-.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
-  
-  font-size: 0.8rem;
-}
-.bgpage {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-</style>
 </head>
     <body  style="margin: 0% ; background-image:url('imgs/pcback.jpg') " class="bgpage">
     <header>
@@ -136,7 +48,17 @@ if(isset($_POST["submit"])){
                 <a href="guide.php"><p><b>Guide</b></p></a>
                 <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                 <a href="about.php"><p><b>AbouT</b></p></a>
-                <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
+                <div class="dropdown" style="float:right">
+                    <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
+                    <?php echo "WelcoMe ", $row["names"];?></b></p></a>
+                    <div class="dropdown-content">
+                      <a href="profile.php"><b>pRofile</b></a>
+                      <a href="logout.php"><b>loGout</b></a>
+                    </div>
+                  </div>
+
+                  <?php } else{ ?>
+                  <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a><?php } ?>
             </div>
         </nav>
     </header>
@@ -207,7 +129,7 @@ if(isset($_POST["submit"])){
         </div>
         </form>
         <a style="color:white">AlReady HAve An Account ?<br>
-        <a style="color:white; text-decoration: none" href="login.php">Login Here!</a>
+        <a style="color: #76B900; text-decoration: none" href="login.php">Login Here!</a>
         </a>
       </div>
     </div>
