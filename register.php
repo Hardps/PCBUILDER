@@ -5,20 +5,22 @@ if(!empty($_SESSION["id"])){
 }
 if(isset($_POST["submit"])){
   $names = $_POST["names"];
+  $lastnames = $_POST["lastnames"];
   $email = $_POST["email"];
   $password = $_POST["password"];
   $confirmpassword = $_POST["confirmpassword"];
-  $duplicate = mysqli_query($conn, "SELECT * FROM users WHERE names = '$names'");
+  $duplicate = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
   if(mysqli_num_rows($duplicate) > 0){
     echo
-    "<script> alert('Username or Email Has Already Taken'); </script>";
+    "<script> alert('Email Has Already Taken'); </script>";
   }
   else{
     if($password == $confirmpassword){
-      $query = "INSERT INTO users VALUES('','$names','$email','$password')";
+      $query = "INSERT INTO users VALUES('','$names', '$lastnames','$email','$password')";
       mysqli_query($conn, $query);
       echo
       "<script> alert('Registration Successful'); </script>";
+      // header("Location: login.php");
     }
     else{
       echo
@@ -96,29 +98,37 @@ if(isset($_POST["submit"])){
         <br>
         <div >
             <div class="input-box">
-                <label class="input-label" style="color:white">nAme</label>
-                <input type="text" id="names" name="names" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "name" required value=""/>
+                <label class="input-label" style="color:white">fiRst nAme</label>
+                <input type="text" id="names" name="names" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="names" required value=""/>
             </div>
               <br>
+              <div class="input-box">
+                <label class="input-label" style="color:white">lAst nAme</label>
+                <input type="text" id="lastnames" name="lastnames" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="lastnames" required value=""/>
+            </div>
+            <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">eMAil</label>
-                <input type="text" id="email" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "email" required value=""/>
+                <input type="text" id="email" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="email" required value=""/>
             </div>
             <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">pAssword</label>
-                <input type="password" id="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
+                <input type="password" id="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="password" required value=""/>
             </div>
             <br>
             <div class="input-box">
                 <label class="input-label" style="color:white">confiRM pAssword</label>
-                <input type="password" id="confirmpassword" name="confirmpassword" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "password" required value=""/>
+                <input type="password" id="confirmpassword" name="confirmpassword" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="password" required value=""/>
             </div>
-            <!-- <div class="input-box">
-                <label class="input-label" style="color:white">confirM pAssword</label>
-                <input type="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id = "confirmpassword" required value=""/>
+            <br>
+            <!-- <div>
+              <input type="radio" id="admin" name="admin" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" required value=""/>
+              <label class="input-label" style="color:white">Admin</label>
+              <input type="radio" id="user" name="user" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" required value=""/>
+              <label class="input-label" style="color:white">user</label>
             </div> -->
-          <br>
+
           <div style="text-align: center;">
       
             <button class="button" type="submit" value="submit" name="submit" style="vertical-align:middle; font-family: 'Major Mono Display', monospace, cursive;font-size: 1rem; line-height: 1.6rem; text-align:center; background-color: #76B900; border-radius: 0.3rem; padding:0.7rem "><b>ReGisTer...</b></button>
