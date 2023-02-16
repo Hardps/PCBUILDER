@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <head>
-    <title>Knowledge Base</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/jpg" href="imgs/www.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
