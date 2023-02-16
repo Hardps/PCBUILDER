@@ -65,18 +65,17 @@ if(isset($_POST["submit"])){
         </nav>
     </header>
 
-    <!-- <div style="text-align:center;line-height: 1.6rem;padding-top:2rem;border-radius: 0.3rem;"> -->
+    <div style="text-align:center;line-height: 1.6rem;padding-top:2rem;border-radius: 0.3rem;">
         <div class="bg">
         <br>
         <br>
         <div><a class="backtext"><b>Login</b></a></div>
         <br>
         <br>
-        <div class="grid-container">
-        <div class="grid-item">
+        
+        
         <a><img src="imgs/GIF.gif" alt ="memo" style="width:12rem;height:12rem; "></a>
-        </div>
-        <div class="grid-item">
+        
         <form class="contact-form" method="post" autocomplete="off">
             <br>
             <div>
@@ -103,14 +102,15 @@ if(isset($_POST["submit"])){
 
             <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
             <br>
+      <form class="contact-form" method="post" autocomplete="off">
           <div>
             <div class="input-box">
-                <label class="input-label" style="color:white">eMAil</label>
+                <label class="input-label" style="color:white">eMAil</label><br>
                 <input type="text" id="email" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
               </div>
               <br>
               <div class="input-box">
-                <label class="input-label" style="color:white">pAssword</label>
+                <label class="input-label" style="color:white">pAssword</label><br>
                 <input type="password" id="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" />
               </div>
           <br>
@@ -122,7 +122,7 @@ if(isset($_POST["submit"])){
           <br>
           </div>
         </div>
-        </form>
+      </form>
         <a style="color:white">don't HAve An Account yet ?<br>
         <a style="text-decoration: none; color: #76B900" href="register.php ">ReGisTer Here!</a>
         </a>

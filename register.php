@@ -20,12 +20,13 @@ if(isset($_POST["submit"])){
       mysqli_query($conn, $query);
       echo
       "<script> alert('Registration Successful'); </script>";
-      // header("Location: login.php");
+      
     }
     else{
       echo
       "<script> alert('Password Does Not Match'); </script>";
     }
+    header("Location: login.php");
   }
 }
 ?>
@@ -98,27 +99,27 @@ if(isset($_POST["submit"])){
         <br>
         <div >
             <div class="input-box">
-                <label class="input-label" style="color:white">fiRst nAme</label>
+                <label class="input-label" style="color:white">fiRst nAme</label><br>
                 <input type="text" id="names" name="names" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="names" required value=""/>
             </div>
               <br>
               <div class="input-box">
-                <label class="input-label" style="color:white">lAst nAme</label>
+                <label class="input-label" style="color:white">lAst nAme</label><br>
                 <input type="text" id="lastnames" name="lastnames" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="lastnames" required value=""/>
             </div>
             <br>
             <div class="input-box">
-                <label class="input-label" style="color:white">eMAil</label>
+                <label class="input-label" style="color:white">eMAil</label><br>
                 <input type="text" id="email" name="email" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="email" required value=""/>
             </div>
             <br>
             <div class="input-box">
-                <label class="input-label" style="color:white">pAssword</label>
+                <label class="input-label" style="color:white">pAssword</label><br>
                 <input type="password" id="password" name="password" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="password" required value=""/>
             </div>
             <br>
             <div class="input-box">
-                <label class="input-label" style="color:white">confiRM pAssword</label>
+                <label class="input-label" style="color:white">confiRM pAssword</label><br>
                 <input type="password" id="confirmpassword" name="confirmpassword" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="password" required value=""/>
             </div>
             <br>

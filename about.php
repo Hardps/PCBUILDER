@@ -19,19 +19,35 @@
                     <a href="guide.php"><p><b>Guide</b></p></a>
                     <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                     <a class="active" href="about.php"><p><b>AbouT</b></p></a>
-                    <div class="dropdown" style="float:right">
-                    <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
-                    <?php echo "WelcoMe ", $row["names"];?></b></p></a>
-                    <div class="dropdown-content">
-                      <a href="profile.php"><b>pRofile</b></a>
-                      <a href="logout.php"><b>loGout</b></a>
-                    </div>
-                  </div>
+                      <div class="dropdown" style="float:right">
+                        <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
+                        <?php echo "WelcoMe ", $row["names"];?></b></p></a>
+                        <div class="dropdown-content">
+                          <a href="profile.php"><b>pRofile</b></a>
+                          <a href="logout.php"><b>loGout</b></a>
+                        </div>
+                      </div>
 
-                  <?php } else{ ?>
-                  <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a><?php } ?>
+                    <?php } else{ ?>
+                    <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a><?php } ?>
                 </div>
             </nav>
-            </header>
-</body>
+        </header>
+        <div style="text-align:center;line-height: 1.6rem;padding-top:2rem;border-radius: 0.3rem;">
+          <div class="bg">
+            <br>
+            <br>
+              <div>
+                <a class="backtext"><b>About us</b></a>
+              </div>
+            <br>
+            <br>
+              <div>
+                <p style="text-align: justify; color: white;  ">
+                  being technical experts in computer technology, we are dedicated to serving you with our skills and experiences. you can take a complete guideline of pc components’ compatibilities to analyze, upgrade and build your custom pc. Also, you can pick a pre-built pc according to your specific needs and priorities.
+                </p>
+              </div>
+          </div>
+        </div>
+    </body>
 </html>
