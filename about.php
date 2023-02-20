@@ -19,6 +19,11 @@
                     <a href="guide.php"><p><b>Guide</b></p></a>
                     <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
                     <a class="active" href="about.php"><p><b>AbouT</b></p></a>
+                    <?php if(!empty($_SESSION["id"])){
+                    if ($row["names"] == "admin"){?>
+                    <a href="admin.php"><p><b>AdMin</b></p></a>
+                    <?php }?>
+                    <?php }?>
                       <div class="dropdown" style="float:right">
                         <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
                         <?php echo "WelcoMe ", $row["names"];?></b></p></a>
