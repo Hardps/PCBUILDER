@@ -20,11 +20,11 @@ if(isset($_POST["submit"])){
       mysqli_query($conn, $query);
       echo
       "<script> alert('Registration Successful'); </script>";
-      
     }
     else{
       echo
       "<script> alert('Password Does Not Match'); </script>";
+      header("Location: register.php");
     }
     header("Location: login.php");
   }
@@ -124,12 +124,6 @@ if(isset($_POST["submit"])){
                 <input type="password" id="confirmpassword" name="confirmpassword" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" id="password" required value=""/>
             </div>
             <br>
-            <!-- <div>
-              <input type="radio" id="admin" name="admin" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" required value=""/>
-              <label class="input-label" style="color:white">Admin</label>
-              <input type="radio" id="user" name="user" class="input-1" onfocus="setFocus(true)" onblur="setFocus(false)" required value=""/>
-              <label class="input-label" style="color:white">user</label>
-            </div> -->
 
           <div style="text-align: center;">
       
