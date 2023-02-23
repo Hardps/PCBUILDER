@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
 
 </head>
-<body  style="margin: 0% ; background-image:url('imgs/pcback.jpg') " class="bgpage">
+<body  style="margin: 0% ; background-image:url('imgs/pcback.jpg') ">
     <header>
         <nav>
             <div class="topnav">
