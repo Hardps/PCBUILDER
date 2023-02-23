@@ -45,14 +45,10 @@ include 'welcome.php';
         <div class="bg" style="width:95%">
           <div>
             <br>
-            <br>
             <a class="backtext"><b>cpu</b></a>
             <br>
             <br>
-            <br>
-            <br>
           </div>
-          <form method="post" action="deleterow.php">
             <div class="content">
               <table>
                 <tr>
@@ -75,19 +71,21 @@ include 'welcome.php';
                   <td>".$row["cores"]."</td>
                   <td>".$row["threads"]."</td>
                   <td>".$row["baseclock"]." ghz"."</td>
-                  <td><button href='deleterow.php?id=<?php".$row['id']."?>'>Delete</button></td>
+                  <td><a href=\"deleterow.php?id=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <br>
+              <br>
+              <div style="text-align: center;">
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addcpu.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>MotHeRboARd</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -98,6 +96,8 @@ include 'welcome.php';
                   <th>model</th>
                   <th>socket</th>
                   <th>max ram</th>
+                  <th>type</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM motherboard";
@@ -108,18 +108,22 @@ include 'welcome.php';
                   <td>".$row["model"]."</td>
                   <td>".$row["socket"]."</td>
                   <td>".$row["maxram"]. "gb"."</td>
+                  <td>".$row["type"]."</td>
+                  <td><a href=\"deleterow.php?mid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addmotherboard.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>RAM</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -131,6 +135,7 @@ include 'welcome.php';
                   <th>capacity</th>
                   <th>channel</th>
                   <th>mhz</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM ram";
@@ -142,18 +147,21 @@ include 'welcome.php';
                   <td>".$row["capacity"]." gb"."</td>
                   <td>".$row["channel"]."</td>
                   <td>".$row["mhz"]."</td>
+                  <td><a href=\"deleterow.php?rid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addram.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>Gpu</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -166,6 +174,7 @@ include 'welcome.php';
                   <th>gddr</th>
                   <th>rtx/gtx</th>
                   <th>company</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM gpu";
@@ -178,18 +187,21 @@ include 'welcome.php';
                   <td>"."gddr ".$row["gddr"]."</td>
                   <td>".$row["rtx/gtx"]."</td>
                   <td>".$row["company"]."</td>
+                  <td><a href=\"deleterow.php?gid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addgpu.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>poWeR supply</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -200,6 +212,7 @@ include 'welcome.php';
                   <th>model</th>
                   <th>wattage</th>
                   <th>certification</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM psu";
@@ -210,18 +223,21 @@ include 'welcome.php';
                   <td>".$row["model"]."</td>
                   <td>".$row["wattage"]." watts"."</td>
                   <td>".$row["certification"]."</td>
+                  <td><a href=\"deleterow.php?pid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addpsu.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>stoRAGe</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -232,6 +248,7 @@ include 'welcome.php';
                   <th>model</th>
                   <th>type</th>
                   <th>capacity</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM storage";
@@ -242,18 +259,21 @@ include 'welcome.php';
                   <td>".$row["model"]."</td>
                   <td>".$row["type"]."</td>
                   <td>".$row["capacity"]."</td>
+                  <td><a href=\"deleterow.php?sid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addstorage.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>cAse</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -264,6 +284,7 @@ include 'welcome.php';
                   <th>model</th>
                   <th>motherboard support</th>
                   <th>color</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM cases";
@@ -274,18 +295,21 @@ include 'welcome.php';
                   <td>".$row["model"]."</td>
                   <td>".$row["motherboardsupport"]."</td>
                   <td>".$row["color"]."</td>
+                  <td><a href=\"deleterow.php?cid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addcase.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>coolinG systeM</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -296,6 +320,7 @@ include 'welcome.php';
                   <th>model</th>
                   <th>type</th>
                   <th>size</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM cool";
@@ -306,18 +331,21 @@ include 'welcome.php';
                   <td>".$row["model"]."</td>
                   <td>".$row["type"]."</td>
                   <td>".$row["size"]."</td>
+                  <td><a href=\"deleterow.php?coid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addcool.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
             <div>
               <br>
               <br>
-              <br>
-              <br>
               <a class="backtext"><b>MonitoR</b></a>
-              <br>
-              <br>
               <br>
               <br>
             </div>
@@ -331,6 +359,7 @@ include 'welcome.php';
                   <th>size</th>
                   <th>aspect-ratio</th>
                   <th>refresh-rate</th>
+                  <th>action</th>
                 </tr>
                 <?php 
                 $sql = "SELECT * FROM monitor";
@@ -344,11 +373,17 @@ include 'welcome.php';
                   <td>".$row["size"]." in"."</td>
                   <td>".$row["ar"]."</td>
                   <td>".$row["rr"]." hz"."</td>
+                  <td><a href=\"deleterow.php?moid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
               </table>
+              <div style="text-align: center;">
+                <br>
+                <br>
+                <button class="button" type="submit" id="submit" name="submit" onclick="window.location.href='addmonitor.php';"><b>add more</b></button>
+                <!--<button type="submit">Submit</button>-->
+              </div>
             </div>
-          </form>
         </div>
 
   </body>

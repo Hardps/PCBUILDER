@@ -44,7 +44,7 @@
                 <br>
                 <br>
                   <div>
-                    <a class="backtext"><b>HoW to cHoose A MotHeRboARd </b></a>
+                    <a class="backtext"><b>HoW to cHoose <br>A MotHeRboARd </b></a>
                   </div>
                 <br>
                 <br>

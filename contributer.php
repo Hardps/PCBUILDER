@@ -1,14 +1,20 @@
 <?php include 'welcome.php' ?>
 <!DOCTYPE html>
 <head>
-    <title>Home</title>
+    <title>Contributors</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/jpg" href="imgs/www.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<style>
+ .p-1 {
+    line-height: 1.8rem;
+    text-decoration: none;
+    }
 
+</style>
 </head>
   <body  style="margin: 0% ; background-image:url('imgs/pcback.jpg') ">
       <header>
@@ -39,41 +45,24 @@
           </nav>
         </header>
         <br>
-
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <div class="card text-center text-white bg-dark mb-3">
-            <img src="imgs/colormotherboard.png" alt="Motherboard Image">
-            <div class="card-body">
-              <h5 class="card-title">Motherboard</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer interdum odio in felis mattis feugiat. In rhoncus libero magna, ultricies condimentum tortor tempor sit amet.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="bg">
+            <div>
+                <a class="backtext"><b>contributors</b></a>
             </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card text-center text-white bg-dark mb-3">
-            <img src="imgs/colorcpu.png" alt="CPU Image">
-            <div class="card-body">
-              <h5 class="card-title">CPU</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer interdum odio in felis mattis feugiat. In rhoncus libero magna, ultricies condimentum tortor tempor sit amet.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <br>
+            <br>
+            <div class="content">
+            <br>
+            <code style="font-size:1.7rem;color: #76B900;">(Developers)</code>
+            <br>
+            <br>
+            <p class="p-1">
+                <a title="Mail" href="#" style="color:#76B900; text-decoration:none;"><b>ayush shah</b></a> 
+            </p>
             </div>
-          </div>
         </div>
-        <div class="col-4">
-          <div class="card text-center text-white bg-dark mb-3">
-            <img src="imgs/ram-memory.png" alt="Ram Image">
-            <div class="card-body">
-              <h5 class="card-title">Ram</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer interdum odio in felis mattis feugiat. In rhoncus libero magna, ultricies condimentum tortor tempor sit amet.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </body>
+  <footer>
   <?php include 'footer.php'; ?>
+  </footer>
 </html>

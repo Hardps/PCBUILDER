@@ -33,6 +33,9 @@ body {
     display: block;
     margin-bottom: 20px;
   }
+  .backtext {
+    font-size: 0.9rem!important;
+  }
 }
 
 /* Style the counter cards */
@@ -130,7 +133,9 @@ body {
   font-family: 'Major Mono Display', monospace; 
   font-size: 3.5em; 
   border-radius: 0.3rem;
-  line-height: 1rem;
+  line-height: 1.7rem;
+  width: min-content!important;
+  display: block;
   padding:1rem;
   margin-left: auto;
   margin-right: auto;
@@ -138,7 +143,7 @@ body {
 }
 
 .bg { 
-  text-align:center;
+  text-align:center!important;
   background-color: black; 
   font-family: 'Major Mono Display', monospace; 
   border-radius: 0.3rem;
@@ -188,6 +193,12 @@ body {
   padding: 2px 16px;
   
 } */
+.form {
+  text-align:center;
+  line-height: 1.6rem;
+  padding-top:2rem;
+  border-radius: 0.3rem;
+}
 
 .form__input {
   border: 2px solid #e1e5ee;
