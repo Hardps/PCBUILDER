@@ -48,26 +48,26 @@ if(isset($_POST["submit"])){
         <nav>
             <div class="topnav">
                 <a class="active" href="index.php"><p><b>HoMe</b></p></a>
-                <a href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
-                <a href="guide.php"><p><b>Guide</b></p></a>
-                <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
-                <a href="about.php"><p><b>AbouT</b></p></a>
+                <a href="pcbuilder.php"><p><b>pcbuilder</b></p></a>
+                <a href="guide.php"><p><b>guide</b></p></a>
+                <a href="knowledgebase.php"><p><b>knowledge-base</b></p></a>
+                <a href="about.php"><p><b>about</b></p></a>
                 <div class="dropdown" style="float:right">
                     <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
                     <?php echo "WelcoMe ", $row["names"];?></b></p></a>
                     <div class="dropdown-content">
-                      <a href="profile.php"><b>pRofile</b></a>
-                      <a href="logout.php"><b>loGout</b></a>
+                      <a href="profile.php"><b>profile</b></a>
+                      <a href="logout.php"><b>logout</b></a>
                     </div>
                   </div>
 
                   <?php } else{ ?>
-                  <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a><?php } ?>
+                  <a href="login.php" class="active alignright"><p><b>login/register</b></p></a><?php } ?>
             </div>
         </nav>
     </header>
 
-    <div style="text-align:center;line-height: 1.6rem;padding-top:2rem;border-radius: 0.3rem;">
+    <div class="form">
         <div class="bg">
         <br>
         <br>
@@ -141,4 +141,5 @@ if(isset($_POST["submit"])){
     </div>
 
 </body>
+<?php include 'footer.php'; ?>
 </html>

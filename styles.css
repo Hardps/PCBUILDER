@@ -34,7 +34,7 @@ body {
     margin-bottom: 20px;
   }
   .backtext {
-    font-size: 0.9rem!important;
+    font-size: 2rem!important;
   }
 }
 
@@ -50,6 +50,11 @@ body {
 
 .kbimg{
   max-width: 100%;
+}
+
+.profileimg{
+  width: 150px;
+  height: 150px;
 }
 
 .topnav {
@@ -174,6 +179,21 @@ body {
   width: 25%;
 }
 
+.profile-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .kbimg{
+  width: 150px;
+  height: 150px;
+} */
 /* .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;

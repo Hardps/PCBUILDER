@@ -29,3 +29,25 @@ echo "</select>";
 
 // Close database connection
 mysqli_close($conn);
+
+----------------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convert User Input to Lowercase</title>
+</head>
+<body>
+	<label for="input">Enter Text:</label>
+	<input type="text" id="input">
+	<button onclick="convertToLowerCase()">Convert to Lowercase</button>
+
+	<script>
+		function convertToLowerCase() {
+			var userInput = document.getElementById("input").value;
+			var userInputLowerCase = userInput.toLowerCase();
+			document.getElementById("input").value = userInputLowerCase;
+		}
+	</script>
+</body>
+</html>

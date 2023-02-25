@@ -17,25 +17,25 @@ include 'welcome.php';
           <nav>
               <div class="topnav">
                   <a href="index.php"><p><b>HoMe</b></p></a>
-                  <a href="pcbuilder.php"><p><b>pcbuiLdeR</b></p></a>
-                  <a href="guide.php"><p><b>Guide</b></p></a>
-                  <a href="knowledgebase.php"><p><b>knoWledGe-bAse</b></p></a>
-                  <a href="about.php"><p><b>AbouT</b></p></a>
+                  <a href="pcbuilder.php"><p><b>pcbuilder</b></p></a>
+                  <a href="guide.php"><p><b>guide</b></p></a>
+                  <a href="knowledgebase.php"><p><b>knowledge-base</b></p></a>
+                  <a href="about.php"><p><b>about</b></p></a>
                   <?php if(!empty($_SESSION["id"])){
                   if ($row["names"] == "admin"){?>
-                  <a class="active" href="admin.php"><p><b>AdMin</b></p></a>
+                  <a class="active" href="admin.php"><p><b>admin</b></p></a>
                   <?php }?>
                   <?php }?>
                   <div class="dropdown" style="float:right">
                     <?php if(!empty($_SESSION["id"])){?><a class="active alignright"><p><b>
                     <?php echo "WelcoMe ", $row["names"];?></b></p></a>
                     <div class="dropdown-content">
-                      <a href="profile.php"><b>pRofile</b></a>
-                      <a href="logout.php"><b>loGout</b></a>
+                      <a href="profile.php"><b>profile</b></a>
+                      <a href="logout.php"><b>logout</b></a>
                     </div>
                   </div>
                   <?php } else{ ?>
-                  <a href="login.php" class="active alignright"><p><b>LogiN/ReGisTer</b></p></a>
+                  <a href="login.php" class="active alignright"><p><b>login/register</b></p></a>
                   <?php } ?>
 
           </nav>
@@ -108,7 +108,7 @@ include 'welcome.php';
                   <td>".$row["model"]."</td>
                   <td>".$row["socket"]."</td>
                   <td>".$row["maxram"]. "gb"."</td>
-                  <td>".$row["type"]."</td>
+                  <td>".$row["types"]."</td>
                   <td><a href=\"deleterow.php?mid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
@@ -143,10 +143,10 @@ include 'welcome.php';
                 while ($row = mysqli_fetch_assoc($result)){
                 echo "<tr>
                   <td>".$row["brand"]."</td>
-                  <td>".$row["dram"]."</td>
+                  <td>"."ddr".$row["dram"]."</td>
                   <td>".$row["capacity"]." gb"."</td>
                   <td>".$row["channel"]."</td>
-                  <td>".$row["mhz"]."</td>
+                  <td>".$row["mhz"].' mhz'."</td>
                   <td><a href=\"deleterow.php?rid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
                 } ?>
@@ -184,7 +184,7 @@ include 'welcome.php';
                   <td>".$row["brand"]."</td>
                   <td>".$row["model"]."</td>
                   <td>".$row["vram"]." gb"."</td>
-                  <td>"."gddr ".$row["gddr"]."</td>
+                  <td>"."gddr".$row["gddr"]."</td>
                   <td>".$row["rtx/gtx"]."</td>
                   <td>".$row["company"]."</td>
                   <td><a href=\"deleterow.php?gid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
@@ -257,7 +257,7 @@ include 'welcome.php';
                 echo "<tr>
                   <td>".$row["brand"]."</td>
                   <td>".$row["model"]."</td>
-                  <td>".$row["type"]."</td>
+                  <td>".$row["types"]."</td>
                   <td>".$row["capacity"]."</td>
                   <td><a href=\"deleterow.php?sid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
@@ -329,7 +329,7 @@ include 'welcome.php';
                 echo "<tr>
                   <td>".$row["brand"]."</td>
                   <td>".$row["model"]."</td>
-                  <td>".$row["type"]."</td>
+                  <td>".$row["types"]."</td>
                   <td>".$row["size"]."</td>
                   <td><a href=\"deleterow.php?coid=".$row["id"]."\"><button class='button'><b>delete</b></button></a></td>
                 </tr>";
@@ -387,4 +387,5 @@ include 'welcome.php';
         </div>
 
   </body>
+  <?php include 'footer.php'; ?>
 </html>
